@@ -17,10 +17,10 @@ class Test {
 //        checkRandom()
 //        print("==================DIGITS======================")
 //        checkDigits()
-        print("==================SORTED======================")
-        checkSorted()
-//        print("==================REVERS======================")
-//        checkRevers()
+//        print("==================SORTED======================")
+//        checkSorted()
+        print("==================REVERS======================")
+        checkRevers()
     }
     
     static private func startBy(size: Int) {
@@ -28,21 +28,21 @@ class Test {
         
         arrayForSort = Sort.array
         
-        if size >= 10_000 && size <= 100_000 {
-//            print("start Bubble sort. Array count = \(size)")
-//            var start = Date()
-//            Sort.bubbleSort()
-//            var end = Date()
-//        
-//            Sort.getStatistic()
-//            print("time: \(end.timeIntervalSince(start))")
-//            print("------------------------------------")
-//            
+        if size <= 10_000 {
+            print("start Bubble sort. Array count = \(size)")
+            var start = Date()
+            Sort.bubbleSort()
+            var end = Date()
+        
+            Sort.getStatistic()
+            print("time: \(end.timeIntervalSince(start))")
+            print("------------------------------------")
+            
             Sort.array = arrayForSort
             print("start Insertion sort. Array count = \(size)")
-            var start = Date()
+            start = Date()
             Sort.insertionSort()
-            var end = Date()
+            end = Date()
         
             Sort.getStatistic()
             print("time: \(end.timeIntervalSince(start))")
@@ -51,7 +51,7 @@ class Test {
 
     
         
-        if size >= 100_000 && size <= 1_000_000 {
+        if size <= 100_000 {
             Sort.array = arrayForSort
             print("start Insertion SHIFT sort. Array count = \(size)")
             var start = Date()
@@ -74,15 +74,15 @@ class Test {
             
         }
     
-//        Sort.array = arrayForSort
-//        print("start Shell sort. Array count = \(size)")
-//        var start = Date()
-//        Sort.shellSort()
-//        var end = Date()
-//    
-//        Sort.getStatistic()
-//        print("time: \(end.timeIntervalSince(start))")
-//        print("------------------------------------")
+        Sort.array = arrayForSort
+        print("start Shell sort. Array count = \(size)")
+        var start = Date()
+        Sort.shellSort()
+        var end = Date()
+    
+        Sort.getStatistic()
+        print("time: \(end.timeIntervalSince(start))")
+        print("------------------------------------")
     }
     
     static private func checkRandom() {
@@ -129,7 +129,7 @@ class Test {
     
     static private func checkSorted() {
         
-        for index in 4...6 {
+        for index in 0...6 {
             let inputTestValue = getDataFrom(path: "test/sorted/test.\(index).\(File.input.rawValue)").split(separator: "\r\n")
             let countElement = Int(inputTestValue[0]) ?? 0
             let arrayInput = inputTestValue[1].split(separator: " ").compactMap {Int($0)}
@@ -150,7 +150,7 @@ class Test {
     
     static private func checkRevers() {
         
-        for index in 0...6 {
+        for index in 1...6 {
             let inputTestValue = getDataFrom(path: "test/revers/test.\(index).\(File.input.rawValue)").split(separator: "\r\n")
             let countElement = Int(inputTestValue[0]) ?? 0
             let arrayInput = inputTestValue[1].split(separator: " ").compactMap {Int($0)}
