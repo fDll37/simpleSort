@@ -15,6 +15,26 @@ class Sort {
     static private var asg: UInt64 = 0 // кол-во присвоений
     static private var cmp: UInt64 = 0 // кол-во сравнений
     
+    static func selectionSort() {
+        var j = array.count - 1
+        
+        while j > 0 {
+            swap(findMax(j: j), j)
+            j -= 1
+        }
+    }
+    
+    static private func findMax(j: Int) -> Int {
+        var indexMax = 0
+        
+        for index in 1...j {
+            if more(array[index], array[indexMax]) {
+                indexMax = index
+            }
+        }
+        return indexMax
+    }
+    
     static func bubbleSort() {
         prepareForStart()
         let count = array.count

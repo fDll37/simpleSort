@@ -19,8 +19,8 @@ class Test {
 //        checkDigits()
 //        print("==================SORTED======================")
 //        checkSorted()
-        print("==================REVERS======================")
-        checkRevers()
+//        print("==================REVERS======================")
+//        checkRevers()
     }
     
     static private func startBy(size: Int) {
@@ -29,20 +29,31 @@ class Test {
         arrayForSort = Sort.array
         
         if size <= 10_000 {
-            print("start Bubble sort. Array count = \(size)")
-            var start = Date()
-            Sort.bubbleSort()
-            var end = Date()
-        
-            Sort.getStatistic()
-            print("time: \(end.timeIntervalSince(start))")
-            print("------------------------------------")
+//            print("start Bubble sort. Array count = \(size)")
+//            var start = Date()
+//            Sort.bubbleSort()
+//            var end = Date()
+//        
+//            Sort.getStatistic()
+//            print("time: \(end.timeIntervalSince(start))")
+//            print("------------------------------------")
+//            
+//            Sort.array = arrayForSort
+//            print("start Insertion sort. Array count = \(size)")
+//            start = Date()
+//            Sort.insertionSort()
+//            end = Date()
+//        
+//            Sort.getStatistic()
+//            print("time: \(end.timeIntervalSince(start))")
+//            print("------------------------------------")
+            
             
             Sort.array = arrayForSort
-            print("start Insertion sort. Array count = \(size)")
-            start = Date()
-            Sort.insertionSort()
-            end = Date()
+            print("start Selection sort. Array count = \(size)")
+            let start = Date()
+            Sort.selectionSort()
+            let end = Date()
         
             Sort.getStatistic()
             print("time: \(end.timeIntervalSince(start))")
@@ -51,38 +62,38 @@ class Test {
 
     
         
-        if size <= 100_000 {
-            Sort.array = arrayForSort
-            print("start Insertion SHIFT sort. Array count = \(size)")
-            var start = Date()
-            Sort.insertionShiftSort()
-            var end = Date()
-            
-            Sort.getStatistic()
-            print("time: \(end.timeIntervalSince(start))")
-            print("------------------------------------")
-            
-            Sort.array = arrayForSort
-            print("start Insertion BINARY sort. Array count = \(size)")
-            start = Date()
-            Sort.insertionBinaryShiftSort()
-            end = Date()
-        
-            Sort.getStatistic()
-            print("time: \(end.timeIntervalSince(start))")
-            print("------------------------------------")
-            
-        }
-    
-        Sort.array = arrayForSort
-        print("start Shell sort. Array count = \(size)")
-        var start = Date()
-        Sort.shellSort()
-        var end = Date()
-    
-        Sort.getStatistic()
-        print("time: \(end.timeIntervalSince(start))")
-        print("------------------------------------")
+//        if size <= 100_000 {
+//            Sort.array = arrayForSort
+//            print("start Insertion SHIFT sort. Array count = \(size)")
+//            var start = Date()
+//            Sort.insertionShiftSort()
+//            var end = Date()
+//            
+//            Sort.getStatistic()
+//            print("time: \(end.timeIntervalSince(start))")
+//            print("------------------------------------")
+//            
+//            Sort.array = arrayForSort
+//            print("start Insertion BINARY sort. Array count = \(size)")
+//            start = Date()
+//            Sort.insertionBinaryShiftSort()
+//            end = Date()
+//        
+//            Sort.getStatistic()
+//            print("time: \(end.timeIntervalSince(start))")
+//            print("------------------------------------")
+//            
+//        }
+//    
+//        Sort.array = arrayForSort
+//        print("start Shell sort. Array count = \(size)")
+//        let start = Date()
+//        Sort.shellSort()
+//        let end = Date()
+//    
+//        Sort.getStatistic()
+//        print("time: \(end.timeIntervalSince(start))")
+//        print("------------------------------------")
     }
     
     static private func checkRandom() {
@@ -168,7 +179,7 @@ class Test {
             }
         }
     }
-    
+        
     static private func getDataFrom(path: String) -> String {
         
         if fileManager.fileExists(atPath: path) {
