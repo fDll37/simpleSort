@@ -3,10 +3,10 @@ import Foundation
 enum SizeArray: Int, CaseIterable {
     case ten = 10
     case oneHundred = 100
-//    case oneThousand = 1000
-//    case tenThousand = 10_000
-//    case hundredThousand = 100_000
-//    case million = 1_000_000
+    case oneThousand = 1000
+    case tenThousand = 10_000
+    case hundredThousand = 100_000
+    case million = 1_000_000
 }
 
 class Sort {

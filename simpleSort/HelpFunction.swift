@@ -63,4 +63,18 @@ extension Sort {
         return value >= valueTwo
     }
     
+    static func split(_ left: Int, _ right: Int) -> Int {
+        let point = array[right]
+        var middle = left - 1
+        
+        for index in left...right {
+            if moreq(point, array[index]) {
+                middle += 1
+                swap(middle, index)
+            }
+        }
+        
+        return middle
+    }
+    
 }
