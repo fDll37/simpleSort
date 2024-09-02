@@ -17,10 +17,10 @@ class Test {
 //        checkRandom()
 //        print("==================DIGITS======================")
 //        checkDigits()
-//        print("==================SORTED======================")
-//        checkSorted()
-//        print("==================REVERS======================")
-//        checkRevers()
+        print("==================SORTED======================")
+        checkSorted()
+        print("==================REVERS======================")
+        checkRevers()
     }
     
     static private func startBy(size: Int) {
@@ -50,9 +50,9 @@ class Test {
             
             
             Sort.array = arrayForSort
-            print("start Heap sort. Array count = \(size)")
+            print("start Q sort. Array count = \(size)")
             let start = Date()
-            Sort.heapSort()
+            Sort.quickSort()
             let end = Date()
         
             Sort.getStatistic()

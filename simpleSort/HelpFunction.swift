@@ -76,5 +76,46 @@ extension Sort {
         
         return middle
     }
+ 
+    static func merge(left: Int, middle: Int, right: Int) {
+        var tempArray: [Int] = Array(repeating: 0, count: right - left + 1)
+        var indexFirst = left
+        var indexSecond = middle + 1
+        var indexMiddle = 0
+        asg += 3
+        
+        while moreq(middle, indexFirst) && moreq(right, indexSecond) {
+            if more(array[indexFirst], array[indexSecond]) {
+                tempArray[indexMiddle] = array[indexSecond]
+                indexMiddle += 1
+                indexSecond += 1
+                asg += 1
+            } else {
+                tempArray[indexMiddle] = array[indexFirst]
+                indexMiddle += 1
+                indexFirst += 1
+                asg += 1
+            }
+        }
+        
+        while moreq(middle, indexFirst) {
+            tempArray[indexMiddle] = array[indexFirst]
+            indexMiddle += 1
+            indexFirst += 1
+            asg += 1
+        }
+        
+        while moreq(right, indexSecond) {
+            tempArray[indexMiddle] = array[indexSecond]
+            indexMiddle += 1
+            indexSecond += 1
+            asg += 1
+        }
+        
+        for index in left...right {
+            array[index] = tempArray[index - left]
+            asg += 1
+        }
+    }
     
 }
