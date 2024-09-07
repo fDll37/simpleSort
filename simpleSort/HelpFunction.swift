@@ -16,9 +16,11 @@ extension Sort {
     static func findMax(j: Int) -> Int {
         var indexMax = 0
         
-        for index in 1...j {
-            if more(array[index], array[indexMax]) {
-                indexMax = index
+        if array.count > 0 {
+            for index in 1...j {
+                if more(array[index], array[indexMax]) {
+                    indexMax = index
+                }
             }
         }
         return indexMax

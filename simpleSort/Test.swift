@@ -13,14 +13,14 @@ class Test {
     private init() {}
     
     static func run() {
-//        print("==================RANDOM======================")
-//        checkRandom()
+        print("==================RANDOM======================")
+        checkRandom()
 //        print("==================DIGITS======================")
 //        checkDigits()
-        print("==================SORTED======================")
-        checkSorted()
-        print("==================REVERS======================")
-        checkRevers()
+//        print("==================SORTED======================")
+//        checkSorted()
+//        print("==================REVERS======================")
+//        checkRevers()
     }
     
     static private func startBy(size: Int) {
@@ -50,9 +50,9 @@ class Test {
             
             
             Sort.array = arrayForSort
-            print("start Q sort. Array count = \(size)")
+            print("start Bucket sort. Array count = \(size)")
             let start = Date()
-            Sort.quickSort()
+            Sort.bucketSort()
             let end = Date()
         
             Sort.getStatistic()
@@ -98,7 +98,7 @@ class Test {
     
     static private func checkRandom() {
         
-        for index in 0...6 {
+        for index in 1...6 {
             let inputTestValue = getDataFrom(path: "test/random/test.\(index).\(File.input.rawValue)").split(separator: "\r\n")
             let countElement = Int(inputTestValue[0]) ?? 0
             let arrayInput = inputTestValue[1].split(separator: " ").compactMap {Int($0)}
@@ -112,6 +112,10 @@ class Test {
                 print("Test №\(index) is GOOD\n\n\n")
             } else {
                 print("Test \(index) is failed")
+                
+                print("Sort by me: \(Sort.array)")
+                print("-------------")
+//                print("Sort by NEED: \(outputTestValue)")
                 break
             }
         }
