@@ -52,12 +52,13 @@ extension Sort {
     }
     
     static func countingSort() {
-        let maxValue = array.max()!
+        let maxValue = array[Sort.findMax(j: array.count - 1)]
         
         var countArray = Array(repeating: 0, count: maxValue + 1)
         
         for num in array {
             countArray[num] += 1
+            asg += 1
         }
         
         var sortedArray: [Int] = []
@@ -68,6 +69,7 @@ extension Sort {
             }
         }
         array = sortedArray
+        asg += UInt64(array.count)
     }
     
 }
