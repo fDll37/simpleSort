@@ -51,6 +51,25 @@ extension Sort {
         }
     }
     
+    static func countingSort() {
+        let maxValue = array.max()!
+        
+        var countArray = Array(repeating: 0, count: maxValue + 1)
+        
+        for num in array {
+            countArray[num] += 1
+        }
+        
+        var sortedArray: [Int] = []
+        
+        for i in 0..<countArray.count {
+            for _ in 0..<countArray[i] {
+                sortedArray.append(i)
+            }
+        }
+        array = sortedArray
+    }
+    
 }
 
 private extension Sort {
