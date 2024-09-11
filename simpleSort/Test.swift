@@ -28,7 +28,7 @@ class Test {
         
         arrayForSort = Sort.array
         
-        if size <= 1_000_000 {
+        if size <= 10_000 {
 //            print("start Bubble sort. Array count = \(size)")
 //            var start = Date()
 //            Sort.bubbleSort()
@@ -50,9 +50,9 @@ class Test {
             
             
             Sort.array = arrayForSort
-            print("start Bucket sort. Array count = \(size)")
+            print("start Radix sort. Array count = \(size)")
             let start = Date()
-            Sort.bucketSort()
+            Sort.radixSort()
             let end = Date()
         
             Sort.getStatistic()

@@ -72,6 +72,41 @@ extension Sort {
         asg += UInt64(array.count)
     }
     
+    static func radixSort() {
+        let maxValue = array[Sort.findMax(j: array.count - 1)]
+        asg += 1
+        
+        for exp in 1..<maxValue {
+            countingSortForRadix(exp)
+        }
+    }
+    
+    static func countingSortForRadix(_ exp: Int) {
+        let n = array.count
+        var output = [Int](repeating: 0, count: n)
+        var count = [Int](repeating: 0, count: 10)
+
+        for i in 0..<n {
+            count[(array[i] / exp) % 10] += 1
+        }
+
+        for i in 1..<10 {
+            count[i] += count[i - 1]
+            asg += 1
+        }
+
+        for i in (0..<n).reversed() {
+            output[count[(array[i] / exp) % 10] - 1] = array[i]
+            count[(array[i] / exp) % 10] -= 1
+            asg += 1
+        }
+
+        for i in 0..<n {
+            array[i] = output[i]
+            asg += 1
+        }
+    }
+    
 }
 
 private extension Sort {
